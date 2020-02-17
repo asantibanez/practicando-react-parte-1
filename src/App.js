@@ -1,9 +1,14 @@
-import React from 'react';
+import React from 'react'
+import SumForm from './SumForm'
 
 function App(props) {
   return (
     <div>
-      Hello World! {props.message}
+        
+        <p>Hello World! {props.message}</p>
+        
+        <SumForm/>
+      
     </div>
   );
 }
