@@ -1,14 +1,19 @@
 import React from 'react'
-import SumForm from './SumForm'
+import ProspectForm from './ProspectForm'
+import ProspectsList from './ProspectsList'
 
 function App(props) {
   return (
     <div>
+        <p className={'text-2xl'}>BEST CRM</p>
+    
+        <div className={'h-4'}/>
         
-        <p>Hello World! {props.message}</p>
+        <ProspectForm/>
         
-        <SumForm/>
-      
+        <div className={'h-16'}/>
+        
+        <ProspectsList/>
     </div>
   );
 }
