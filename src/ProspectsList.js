@@ -1,4 +1,5 @@
 import React from 'react'
+import ProspectItem from './ProspectItem'
 
 
 const ProspectsList = () => (
@@ -22,108 +23,15 @@ const ProspectsList = () => (
                 </div>
                 <div className="flex-1"/>
             </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Luke+Skywalker"/>
-                    <span className="ml-4">Luke Skywalker</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Han+Solo"/>
-                    <span className="ml-4">Han Solo</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Leia+Skywalker"/>
-                    <span className="ml-4">Leia Skywalker</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Adam+Jensen"/>
-                    <span className="ml-4">Adam Jensen</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=James+Kirk"/>
-                    <span className="ml-4">James Kirk</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
-        
-            <div className="shadow rounded border p-4 my-3 flex items-center">
-                <div className="flex-1 flex items-center">
-                    <img className="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Steve+Rogers"/>
-                    <span className="ml-4">Steve Rogers</span>
-                </div>
-                <div className="flex-1">
-                    1986-05-21
-                </div>
-                <div className="flex-1">
-                    33 años
-                </div>
-                <div className="flex-1 text-right">
-                    <button className="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
-                    <button className="py-2 px-4 border rounded text-sm">Eliminar</button>
-                </div>
-            </div>
+            
+            <ProspectItem firstName={'Luke'} lastName={'Skywalker'}/>
+            <ProspectItem firstName={'Han'} lastName={'Solo'}/>
+            <ProspectItem firstName={'Leia'} lastName={'Skywalker'}/>
+            <ProspectItem firstName={'Adam'} lastName={'Jensen'}/>
+            <ProspectItem firstName={'James'} lastName={'Kirk'}/>
+            <ProspectItem firstName={'Steve'} lastName={'Rogers'}/>
+            <ProspectItem firstName={'Scott'} lastName={'Summers'}/>
+            
         </div>
     </div>
 )
