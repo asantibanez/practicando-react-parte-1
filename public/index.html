@@ -1,43 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta
+          name="description"
+          content="Web site created using create-react-app"
+  />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+    manifest.json provides metadata used when your web app is installed on a
+    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+  <title>React App</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mx-auto p-4">
+  <!-- New Lead form -->
+  <p class="font-bold text-lg">
+    Nuevo Prospecto
+  </p>
+  <div class="h-4"></div>
+  <div class="shadow rounded border-indigo-200 p-4 bg-indigo-100">
+    <form>
+      <div>
+        <div class="flex flex-col">
+          <label class="text-sm font-medium">Nombre</label>
+          <input type="text"
+                 name="first_name"
+                 class="rounded border px-4 py-2"
+                 placeholder="Nombre"/>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="flex flex-col">
+          <label class="text-sm font-medium">Apellido</label>
+          <input type="text"
+                 name="last_name"
+                 class="rounded border px-4 py-2"
+                 placeholder="Apellido"/>
+        </div>
+      </div>
+      <div class="mt-2">
+        <div class="flex flex-col">
+          <label class="text-sm font-medium">Fecha de Nacimiento</label>
+          <input type="date"
+                 name="date_of_birth"
+                 class="rounded border px-4 py-2"
+                 placeholder="Fecha de Nacimiento"/>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="flex">
+          <button type="submit" class="px-4 py-2 text-sm border bg-indigo-500 text-white rounded">
+            Guardar Prospecto
+          </button>
+          <div class="w-2"></div>
+          <button class="px-4 py-2 text-sm border border-gray-500 rounded">Descartar</button>
+        </div>
+      </div>
+    </form>
+  </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <div class="h-16"></div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Leads listing -->
+  <p class="font-bold text-lg">
+    Últimos Prospectos
+  </p>
+
+  <div class="h-4"></div>
+
+  <div>
+    <div class="p-4 flex text-gray-600 uppercase text-xs">
+      <div class="flex-1">
+        Name
+      </div>
+      <div class="flex-1">
+        Fecha de Nacimiento
+      </div>
+      <div class="flex-1">
+        Edad
+      </div>
+      <div class="flex-1"></div>
+    </div>
+
+    <!-- Luke -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Luke+Skywalker"/>
+        <span class="ml-4">Luke Skywalker</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Han -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Han+Solo"/>
+        <span class="ml-4">Han Solo</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Leia -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Leia+Skywalker"/>
+        <span class="ml-4">Leia Skywalker</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Adam Jensen -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Adam+Jensen"/>
+        <span class="ml-4">Adam Jensen</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- James Kirk -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=James+Kirk"/>
+        <span class="ml-4">James Kirk</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Steve Rogers -->
+    <div class="shadow rounded border p-4 my-3 flex items-center">
+      <div class="flex-1 flex items-center">
+        <img class="h-12 w-12 rounded-full" src="https://ui-avatars.com/api/?name=Steve+Rogers"/>
+        <span class="ml-4">Steve Rogers</span>
+      </div>
+      <div class="flex-1">
+        1986-05-21
+      </div>
+      <div class="flex-1">
+        33 años
+      </div>
+      <div class="flex-1 text-right">
+        <button class="py-2 px-4 border rounded text-sm bg-orange-500 text-white">Saludar</button>
+        <button class="py-2 px-4 border rounded text-sm">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
