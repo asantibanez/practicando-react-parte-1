@@ -2,18 +2,7 @@ import React from 'react'
 import ProspectItem from './ProspectItem'
 
 
-const ProspectsList = () => {
-    
-    const prospects = [
-        {firstName: "Luke", lastName:"Skywalker"},
-        {firstName: 'Han', lastName: 'Solo'},
-        {firstName: 'Leia', lastName: 'Skywalker'},
-        {firstName: 'Adam', lastName: 'Jensen'},
-        {firstName: 'James', lastName: 'Kirk'},
-        {firstName: 'Steve', lastName: 'Rogers'},
-        {firstName: 'Scott', lastName: 'Summers'},
-    ]
-    
+const ProspectsList = (props) => {
     return (
         <div>
             <p className="font-bold text-lg">
@@ -36,7 +25,7 @@ const ProspectsList = () => {
                     <div className="flex-1"/>
                 </div>
                 
-                {prospects.map(prospect => {
+                {props.prospects.map(prospect => {
                     return (
                         <ProspectItem
                             key={`${prospect.firstName}-${prospect.lastName}`}

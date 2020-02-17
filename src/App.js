@@ -3,19 +3,29 @@ import ProspectForm from './ProspectForm'
 import ProspectsList from './ProspectsList'
 
 function App(props) {
-  return (
-    <div>
-        <p className={'text-2xl'}>BEST CRM</p>
+    const prospects = [
+        {firstName: "Luke", lastName:"Skywalker"},
+        {firstName: 'Han', lastName: 'Solo'},
+        {firstName: 'Leia', lastName: 'Skywalker'},
+        {firstName: 'Adam', lastName: 'Jensen'},
+        {firstName: 'James', lastName: 'Kirk'},
+        {firstName: 'Steve', lastName: 'Rogers'},
+        {firstName: 'Scott', lastName: 'Summers'},
+    ]
     
-        <div className={'h-4'}/>
-        
-        <ProspectForm/>
-        
-        <div className={'h-16'}/>
-        
-        <ProspectsList/>
-    </div>
-  );
+    return (
+        <div>
+            <p className={'text-2xl'}>BEST CRM</p>
+            
+            <div className={'h-4'}/>
+            
+            <ProspectForm/>
+            
+            <div className={'h-16'}/>
+            
+            <ProspectsList prospects={prospects}/>
+        </div>
+    );
 }
 
 export default App;
