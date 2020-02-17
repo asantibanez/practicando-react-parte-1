@@ -2,39 +2,53 @@ import React from 'react'
 import ProspectItem from './ProspectItem'
 
 
-const ProspectsList = () => (
-    <div>
-        <p className="font-bold text-lg">
-            Últimos Prospectos
-        </p>
+const ProspectsList = () => {
     
-        <div className="h-4"/>
+    const prospects = [
+        {firstName: "Luke", lastName:"Skywalker"},
+        {firstName: 'Han', lastName: 'Solo'},
+        {firstName: 'Leia', lastName: 'Skywalker'},
+        {firstName: 'Adam', lastName: 'Jensen'},
+        {firstName: 'James', lastName: 'Kirk'},
+        {firstName: 'Steve', lastName: 'Rogers'},
+        {firstName: 'Scott', lastName: 'Summers'},
+    ]
     
+    return (
         <div>
-            <div className="p-4 flex text-gray-600 uppercase text-xs">
-                <div className="flex-1">
-                    Name
+            <p className="font-bold text-lg">
+                Últimos Prospectos
+            </p>
+            
+            <div className="h-4"/>
+            
+            <div>
+                <div className="p-4 flex text-gray-600 uppercase text-xs">
+                    <div className="flex-1">
+                        Name
+                    </div>
+                    <div className="flex-1">
+                        Fecha de Nacimiento
+                    </div>
+                    <div className="flex-1">
+                        Edad
+                    </div>
+                    <div className="flex-1"/>
                 </div>
-                <div className="flex-1">
-                    Fecha de Nacimiento
-                </div>
-                <div className="flex-1">
-                    Edad
-                </div>
-                <div className="flex-1"/>
+                
+                {prospects.map(prospect => {
+                    return (
+                        <ProspectItem
+                            key={`${prospect.firstName}-${prospect.lastName}`}
+                            firstName={prospect.firstName}
+                            lastName={prospect.lastName}
+                        />
+                    )
+                })}
             </div>
-            
-            <ProspectItem firstName={'Luke'} lastName={'Skywalker'}/>
-            <ProspectItem firstName={'Han'} lastName={'Solo'}/>
-            <ProspectItem firstName={'Leia'} lastName={'Skywalker'}/>
-            <ProspectItem firstName={'Adam'} lastName={'Jensen'}/>
-            <ProspectItem firstName={'James'} lastName={'Kirk'}/>
-            <ProspectItem firstName={'Steve'} lastName={'Rogers'}/>
-            <ProspectItem firstName={'Scott'} lastName={'Summers'}/>
-            
         </div>
-    </div>
-)
+    )
+}
 
 
 export default ProspectsList
