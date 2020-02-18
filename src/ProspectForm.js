@@ -21,16 +21,17 @@ class ProspectForm extends React.Component {
     }
     
     saveProspect = () => {
-        console.log('Saving...')
-        console.log("First Name: " + this.state.firstName)
-        console.log("Last Name: " + this.state.lastName)
-        console.log("Date Of Birth: " + this.state.dateOfBirth)
-    
         this.props.onProspectSaved(
             this.state.firstName,
             this.state.lastName,
             this.state.dateOfBirth,
         )
+        
+        this.setState({
+            firstName: '',
+            lastName: '',
+            dateOfBirth: '',
+        })
     }
     
     render() {
