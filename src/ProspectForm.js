@@ -2,6 +2,10 @@ import React from 'react'
 
 
 function ProspectForm() {
+    const saveProspect = () => {
+        console.log('Saving...')
+    }
+    
     return (
         <div>
             {/*New Lead form*/}
@@ -40,7 +44,12 @@ function ProspectForm() {
                     </div>
                     <div className="mt-4">
                         <div className="flex">
-                            <button type="submit" className="px-4 py-2 text-sm border bg-indigo-500 text-white rounded">
+                            <button type="submit"
+                                    className="px-4 py-2 text-sm border bg-indigo-500 text-white rounded"
+                                    onClick={e => {
+                                        e.preventDefault()
+                                        saveProspect()
+                                    }}>
                                 Guardar Prospecto
                             </button>
                             <div className="w-2"/>
