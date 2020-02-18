@@ -23,7 +23,9 @@ function App(props) {
             
             <div className={'h-16'}/>
             
-            <ProspectsList prospects={prospects}/>
+            <ProspectsList
+                prospects={prospects}
+            />
         </div>
     );
 }

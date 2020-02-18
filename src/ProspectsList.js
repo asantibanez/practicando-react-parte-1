@@ -1,5 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ProspectItem from './ProspectItem'
+
 
 const TitleView = () => (
     <p className="font-bold text-lg">
@@ -50,6 +52,16 @@ const ProspectsList = (props) => {
         </div>
     )
 }
+
+
+ProspectsList.propTypes = {
+    prospects: PropTypes.array.isRequired,
+}
+
+ProspectsList.defaultProps = {
+    prospects: [],
+}
+
 
 
 export default ProspectsList

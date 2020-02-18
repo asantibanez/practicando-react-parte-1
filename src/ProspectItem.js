@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 
 const ProspectItem = (props) => {
@@ -23,6 +24,16 @@ const ProspectItem = (props) => {
             </div>
         </div>
     )
+}
+
+
+ProspectItem.propTypes = {
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+}
+
+ProspectItem.defaultProps = {
+    //
 }
 
 
