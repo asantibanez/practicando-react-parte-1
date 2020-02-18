@@ -1,13 +1,23 @@
 import React from 'react'
 import ProspectItem from './ProspectItem'
 
+const TitleView = () => (
+    <p className="font-bold text-lg">
+        Últimos Prospectos
+    </p>
+)
+
+const EmptyView = () => {
+    return (
+        <p>No se encontraron prospectos</p>
+    )
+}
+
 
 const ProspectsList = (props) => {
     return (
         <div>
-            <p className="font-bold text-lg">
-                Últimos Prospectos
-            </p>
+            {TitleView()}
             
             <div className="h-4"/>
             
@@ -24,6 +34,8 @@ const ProspectsList = (props) => {
                     </div>
                     <div className="flex-1"/>
                 </div>
+                
+                {props.prospects.length === 0 && EmptyView()}
                 
                 {props.prospects.map(prospect => {
                     return (
