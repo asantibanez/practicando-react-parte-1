@@ -1,4 +1,6 @@
 import React from 'react'
+import faker from 'faker'
+import moment from 'moment'
 
 
 class ProspectForm extends React.Component {
@@ -6,7 +8,16 @@ class ProspectForm extends React.Component {
     state = {
         firstName: '',
         lastName: '',
+        dateOfBirth: '',
         isLoading: false,
+    }
+    
+    randomizeData = () => {
+        this.setState({
+            firstName: faker.name.firstName(),
+            lastName: faker.name.lastName(),
+            dateOfBirth: moment(faker.date.past()).format('YYYY-MM-DD')
+        })
     }
     
     render() {
@@ -66,6 +77,12 @@ class ProspectForm extends React.Component {
                                 <label className="text-sm font-medium">Fecha de Nacimiento</label>
                                 <input type="date"
                                        name="date_of_birth"
+                                       value={this.state.dateOfBirth}
+                                       onChange={e => {
+                                           this.setState({
+                                               dateOfBirth: e.target.value,
+                                           })
+                                       }}
                                        className="rounded border px-4 py-2"
                                        placeholder="Fecha de Nacimiento"/>
                             </div>
@@ -82,6 +99,12 @@ class ProspectForm extends React.Component {
                                 </button>
                                 <div className="w-2"/>
                                 <button className="px-4 py-2 text-sm border border-gray-500 rounded">Descartar</button>
+                                
+                                <div className="w-16"/>
+                                
+                                <button type={'button'} className="px-4 py-2 text-sm border border-gray-500 rounded" onClick={this.randomizeData}>
+                                    Randomize
+                                </button>
                             </div>
                         </div>
                     </form>
