@@ -2,12 +2,21 @@ import React from 'react'
 
 
 function ProspectForm() {
+    const firstNameRef = React.createRef()
+    const lastNameRef = React.createRef()
+    let isLoading = false
+    
     const saveProspect = () => {
         console.log('Saving...')
+        console.log('First Name: ' + firstNameRef.current.value)
+        console.log('Last Name: ' + lastNameRef.current.value)
+        isLoading = true
     }
     
     return (
         <div>
+            Is Loading: { isLoading ? "Si" : "No" }
+            
             {/*New Lead form*/}
             <p className="font-bold text-lg">
                 Nuevo Prospecto
@@ -21,6 +30,7 @@ function ProspectForm() {
                             <input type="text"
                                    name="first_name"
                                    className="rounded border px-4 py-2"
+                                   ref={firstNameRef}
                                    placeholder="Nombre"/>
                         </div>
                     </div>
@@ -30,6 +40,7 @@ function ProspectForm() {
                             <input type="text"
                                    name="last_name"
                                    className="rounded border px-4 py-2"
+                                   ref={lastNameRef}
                                    placeholder="Apellido"/>
                         </div>
                     </div>
