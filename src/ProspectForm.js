@@ -12,6 +12,8 @@ class ProspectForm extends React.Component {
     render() {
         const saveProspect = () => {
             console.log('Saving...')
+            console.log("First Name: " + this.state.firstName)
+            console.log("Last Name: " + this.state.lastName)
             
             this.setState({
                 isLoading: true,
@@ -34,6 +36,12 @@ class ProspectForm extends React.Component {
                                 <label className="text-sm font-medium">Nombre</label>
                                 <input type="text"
                                        name="first_name"
+                                       value={this.state.firstName}
+                                       onChange={e => {
+                                           this.setState({
+                                               firstName: e.target.value,
+                                           })
+                                       }}
                                        className="rounded border px-4 py-2"
                                        placeholder="Nombre"/>
                             </div>
@@ -43,6 +51,12 @@ class ProspectForm extends React.Component {
                                 <label className="text-sm font-medium">Apellido</label>
                                 <input type="text"
                                        name="last_name"
+                                       value={this.state.lastName}
+                                       onChange={e => {
+                                           this.setState({
+                                               lastName: e.target.value,
+                                           })
+                                       }}
                                        className="rounded border px-4 py-2"
                                        placeholder="Apellido"/>
                             </div>
