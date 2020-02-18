@@ -42,7 +42,7 @@ const ProspectsList = (props) => {
                 {props.prospects.map(prospect => {
                     return (
                         <ProspectItem
-                            key={`${prospect.firstName}-${prospect.lastName}`}
+                            key={prospect.id}
                             firstName={prospect.firstName}
                             lastName={prospect.lastName}
                         />
