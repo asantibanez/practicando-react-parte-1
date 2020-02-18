@@ -2,32 +2,38 @@ import React from 'react'
 import ProspectForm from './ProspectForm'
 import ProspectsList from './ProspectsList'
 
-function App(props) {
-    const prospects = [
-        {firstName: "Luke", lastName:"Skywalker"},
-        {firstName: 'Han', lastName: 'Solo'},
-        {firstName: 'Leia', lastName: 'Skywalker'},
-        {firstName: 'Adam', lastName: 'Jensen'},
-        {firstName: 'James', lastName: 'Kirk'},
-        {firstName: 'Steve', lastName: 'Rogers'},
-        {firstName: 'Scott', lastName: 'Summers'},
-    ]
+class App extends React.Component {
     
-    return (
-        <div>
-            <p className={'text-2xl'}>BEST CRM</p>
-            
-            <div className={'h-4'}/>
-            
-            <ProspectForm/>
-            
-            <div className={'h-16'}/>
-            
-            <ProspectsList
-                prospects={prospects}
-            />
-        </div>
-    );
+    state = {
+        prospects: [],
+    }
+    
+    render() {
+        return (
+            <div>
+                <p className={'text-2xl'}>BEST CRM</p>
+                
+                <div className={'h-4'}/>
+                
+                <ProspectForm
+                    onProspectSaved={(firstName, lastName, dateOfBirth) => {
+                        this.setState((state) => ({
+                            prospects: [
+                                ...state.prospects,
+                                { firstName, lastName, dateOfBirth }
+                            ]
+                        }))
+                    }}
+                />
+                
+                <div className={'h-16'}/>
+                
+                <ProspectsList
+                    prospects={this.state.prospects}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;

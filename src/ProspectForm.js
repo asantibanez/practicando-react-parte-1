@@ -1,6 +1,7 @@
 import React from 'react'
 import faker from 'faker'
 import moment from 'moment'
+import PropTypes from 'prop-types'
 
 
 class ProspectForm extends React.Component {
@@ -9,7 +10,6 @@ class ProspectForm extends React.Component {
         firstName: '',
         lastName: '',
         dateOfBirth: '',
-        isLoading: false,
     }
     
     randomizeData = () => {
@@ -20,21 +20,22 @@ class ProspectForm extends React.Component {
         })
     }
     
+    saveProspect = () => {
+        console.log('Saving...')
+        console.log("First Name: " + this.state.firstName)
+        console.log("Last Name: " + this.state.lastName)
+        console.log("Date Of Birth: " + this.state.dateOfBirth)
+    
+        this.props.onProspectSaved(
+            this.state.firstName,
+            this.state.lastName,
+            this.state.dateOfBirth,
+        )
+    }
+    
     render() {
-        const saveProspect = () => {
-            console.log('Saving...')
-            console.log("First Name: " + this.state.firstName)
-            console.log("Last Name: " + this.state.lastName)
-            
-            this.setState({
-                isLoading: true,
-            })
-        }
-        
         return (
             <div>
-                Is Loading: {this.state.isLoading ? "Si" : "No"}
-                
                 {/*New Lead form*/}
                 <p className="font-bold text-lg">
                     Nuevo Prospecto
@@ -93,7 +94,7 @@ class ProspectForm extends React.Component {
                                         className="px-4 py-2 text-sm border bg-indigo-500 text-white rounded"
                                         onClick={e => {
                                             e.preventDefault()
-                                            saveProspect()
+                                            this.saveProspect()
                                         }}>
                                     Guardar Prospecto
                                 </button>
@@ -112,6 +113,15 @@ class ProspectForm extends React.Component {
             </div>
         )
     }
+}
+
+
+ProspectForm.propTypes = {
+    onProspectSaved: PropTypes.func.isRequired,
+}
+
+ProspectForm.defaultProps = {
+    //
 }
 
 
