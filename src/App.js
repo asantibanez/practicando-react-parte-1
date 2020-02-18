@@ -34,6 +34,15 @@ class App extends React.Component {
                 
                 <ProspectsList
                     prospects={this.state.prospects}
+                    onProspectDeleteClick={prospect => {
+                        this.setState((state) => {
+                            return {
+                                prospects: [
+                                    ...state.prospects.filter(item => item.id !== prospect.id)
+                                ]
+                            }
+                        })
+                    }}
                 />
             </div>
         );

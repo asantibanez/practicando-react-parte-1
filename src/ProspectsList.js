@@ -43,8 +43,8 @@ const ProspectsList = (props) => {
                     return (
                         <ProspectItem
                             key={prospect.id}
-                            firstName={prospect.firstName}
-                            lastName={prospect.lastName}
+                            prospect={prospect}
+                            onProspectDeleteClick={props.onProspectDeleteClick}
                         />
                     )
                 })}
@@ -56,6 +56,7 @@ const ProspectsList = (props) => {
 
 ProspectsList.propTypes = {
     prospects: PropTypes.array.isRequired,
+    onProspectDeleteClick: PropTypes.func.isRequired,
 }
 
 ProspectsList.defaultProps = {
